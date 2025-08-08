@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -26,24 +26,23 @@ const Navbar = () => {
 
   return (
     <motion.header
-      className={`sticky top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? 'bg-gray-200 backdrop-blur-sm shadow-lg' : 'bg-gray-200 shadow-[0_0_20px_rgba(66,133,244,0.6)]'
+      className={`sticky top-0 left-0 w-full z-60 bg-white transition-all duration-500 ${
+        scrolled ? 'backdrop-blur-sm shadow-lg ' : 'shadow-[0_0_20px_rgba(66,133,244,0.6)]'
       }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <nav className="max-w-screen-xl mx-auto px-5 py-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
-            className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+           onClick={()=>scrollToSection("home")}
+            className="cursor-pointer"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
+
           >
             <img
-            src='\logo1.png'
-            className='w-36 h-20'
+            src='/NavLogo.png'
+            className='w-8 md:w-10 lg:w-12 md:py-1 h-auto object-contain'
             />
           </motion.div>
 
@@ -53,7 +52,7 @@ const Navbar = () => {
               <motion.button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-slate-700 hover:text-purple-600 transition-colors duration-200 font-medium relative"
+                className="text-slate-700 hover:text-purple-600 cursor-pointer transition-colors duration-200 font-medium relative"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -72,7 +71,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Toggle Button */}
           <motion.button
-            className="md:hidden text-slate-700"
+            className="md:hidden text-gray-700"
             onClick={() => setIsOpen(!isOpen)}
             whileTap={{ scale: 0.95 }}
           >
@@ -106,7 +105,7 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="md:hidden mt-4 bg-white rounded-lg shadow-lg p-4"
+              className="md:hidden my-4 bg-white rounded-lg shadow-lg p-4"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -116,7 +115,7 @@ const Navbar = () => {
                 <motion.button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="block w-full text-left py-2 text-slate-700 hover:text-purple-600 transition-colors duration-200"
+                  className="block w-full text-left py-2 bg-gray-100 my-2 px-2 rounded-md text-gray-700 hover:text-purple-600 transition-colors duration-200"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}

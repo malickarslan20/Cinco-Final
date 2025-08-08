@@ -1,15 +1,16 @@
-import React from "react";
-import { Linkedin, Facebook, Mail, Instagram } from "lucide-react";
+
+import { Linkedin, Mail, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 text-white py-10">
+    <footer className="bg-gradient-to-r from-blue-600 to-purple-600  text-white py-10">
       <div className="max-w-6xl mx-auto px-4 flex flex-col items-center text-center space-y-6">
 
         {/* Logo / Brand Name */}
-        <h2 className="text-3xl md:text-4xl font-extrabold tracking-wide bg-gradient-to-r from-white to-blue-100 text-transparent bg-clip-text">
+        <h2 className="text-3xl md:text-4xl font-italic font-bold tracking-wide text-white">
           CincoByte
         </h2>
+        
 
         {/* Mission Statement */}
         <p className="text-white text-sm md:text-base max-w-xl">
@@ -19,9 +20,10 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex gap-6 mt-4">
           <a
-            href="mailto:cincobyteofficial@gmail.com"
+            href="mailto:kashisial2327@gmail.com"
             aria-label="Email"
-            className="hover:text-yellow-300 transition duration-300"
+             target="_blank"
+            className="hover:scale-110 transition duration-300"
           >
             <Mail size={24} />
           </a>
@@ -30,7 +32,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="hover:text-yellow-300 transition duration-300"
+            className="hover:scale-110 transition duration-300"
           >
             <Instagram size={24} />
           </a>
@@ -39,24 +41,24 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="hover:text-yellow-300 transition duration-300"
+            className="hover:scale-110 transition duration-300"
           >
             <Linkedin size={24} />
           </a>
         </div>
 
         {/* Footer Details */}
-        <div className="text-sm text-blue-100 mt-4">
+        <div className="text-sm text-gray-200 mt-4">
           <p>&copy; {new Date().getFullYear()} CincoByte. All rights reserved.</p>
-          <p>
+          <div className="text-lg mt-1">
             Contact us at{" "}
             <a
               href="mailto:cincobyteofficial@gmail.com"
-              className="underline hover:text-white"
+              className="underline underline-offset-4  hover:text-white"
             >
               cincobyteofficial@gmail.com
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </footer>

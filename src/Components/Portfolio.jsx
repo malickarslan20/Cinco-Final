@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 
@@ -105,13 +105,13 @@ const Portfolio = () => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6"
+            className="text-4xl md:text-5xl font-bold   bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 bg-clip-text text-transparent mb-6"
           >
             Our Portfolio
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
+            className="md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed"
           >
             Discover our recent projects and the impact we've made for businesses across various industries.
           </motion.p>
@@ -126,10 +126,9 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <motion.div 
               key={index} 
-              className="bg-white rounded-xl shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden group relative"
+              className="bg-white rounded-xl shadow-sm  cursor-default hover:shadow-2xl transition-all duration-500 overflow-hidden group relative"
               variants={itemVariants}
-              whileHover={{ 
-                y: -20,
+              whileHover={{                 
                 scale: 1.02,
                 rotateY: 5,
                 boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15)"
