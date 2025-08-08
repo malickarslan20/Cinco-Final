@@ -45,7 +45,7 @@ const Hero = () => {
       >
         <motion.div
           variants={itemVariants}
-          className=" mb-2"
+          className=" mb-2 -mt-14"
         >
 
 <motion.h1
