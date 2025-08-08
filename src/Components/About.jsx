@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import  { useEffect, useRef } from 'react';
 import { Target, Users, Award, Zap } from 'lucide-react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 
@@ -14,7 +14,7 @@ const About = () => {
   }, [isInView, controls]);
 
   const stats = [
-    { number: '50+', label: 'Projects Completed' },
+    { number: '10+', label: 'Projects Completed' },
     { number: '30+', label: 'Happy Clients' },
     { number: '2+', label: 'Years Experience' },
     { number: '24/7', label: 'Support' },
@@ -35,8 +35,8 @@ const About = () => {
     },
     {
       icon: <Award className="text-yellow-600" size={48} />,
-      title: 'Quality First',
-      description: 'We maintain the highest standards in every project, ensuring excellence in design and development.',
+      title: 'Delivering Value',
+      description: 'In every project, we deliver value, not just code, crafting solutions that solve real problems and empower users through innovation.',
       color: 'yellow'
     },
     {
@@ -70,18 +70,7 @@ const About = () => {
     }
   };
 
-  const statVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 10
-      }
-    }
-  };
+
 
   return (
     <section id="about" className="py-20 bg-gradient-to-br from-slate-50 to-purple-50" ref={ref}>
@@ -94,13 +83,13 @@ const About = () => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent mb-6"
+            className="text-4xl md:text-5xl font-bold pb-2  bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 bg-clip-text text-transparent mb-6"
           >
             About Cincobyte
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
+            className="md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed"
           >
             We are a forward-thinking technology company dedicated to transforming businesses 
             through innovative digital solutions and exceptional user experiences.
@@ -118,15 +107,13 @@ const About = () => {
             <motion.div 
               key={index} 
               className="text-center"
-              variants={statVariants}
               whileHover={{ 
                 scale: 1.1,
-                rotate: [0, -5, 5, 0],
                 transition: { duration: 0.5 }
               }}
             >
               <motion.div 
-                className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2"
+                className="text-4xl md:text-5xl font-bold text-purple-600 mb-2"
                 animate={{ 
                   backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                 }}
@@ -158,7 +145,7 @@ const About = () => {
           {values.map((value, index) => (
             <motion.div 
               key={index} 
-              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="bg-white p-8 rounded-xl cursor-default shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
               variants={itemVariants}
               whileHover={{ 
                 y: -10,

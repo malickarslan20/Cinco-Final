@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { Code, Smartphone, Globe, BarChart, Shield,Paintbrush,ServerCog } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import { Code, Smartphone, Globe, BarChart, Shield,Paintbrush,ServerCog, Pyramid } from 'lucide-react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 
 const Services = () => {
@@ -14,49 +14,56 @@ const Services = () => {
   }, [isInView, controls]);
 
   const services = [
-    {
-      icon: <Code className="text-purple-600" size={48} />,
-      title: 'Web Development',
-      description: 'Custom web applications built with modern technologies for optimal performance and user experience.',
-      features: ['React & Next.js', 'Node.js Backend', 'Database Design', 'API Integration'],
-      gradient: 'from-purple-500 to-indigo-600'
-    },
+   {
+  icon: <Code className="text-purple-600" size={48} />,
+  title: 'Full Stack Web Development',
+  description: 'Custom web applications built with modern technologies for optimal performance, scalability, and seamless user experience.',
+  features: [
+    'React & Next.js',
+    'Node.js & Express',
+    'Database Design & Optimization (SQL & NoSQL)',
+    'RESTful & GraphQL API Development',
+  ],
+  gradient: 'from-purple-500 to-indigo-600'
+},
+
     {
       icon: <Smartphone className="text-cyan-600" size={48} />,
-      title: 'Mobile Apps',
+      title: 'Flutter Mobile App Development',
       description: 'Native and cross-platform mobile applications that engage users and drive business growth.',
       features: ['iOS & Android', 'React Native', 'Flutter', 'App Store Optimization'],
       gradient: 'from-cyan-500 to-blue-600'
     },
     {
   icon: <Globe className="text-pink-600" size={48} />,
-  title: 'Python Development',
-  description: 'Robust and scalable Python solutions tailored for web development, automation, and data processing.',
-  features: ['Web Development (Django/Flask)', 'Data Analysis & Automation', 'API Development', 'Scripting & Bots'],
+  title: 'Machine Learning',
+  description: 'We design and deploy intelligent machine learning solutions that transform raw data into actionable insights.',
+  features: ['Predictive Analytics', 'AI Automation', 'Data Insights', 'Model Deployment'],
   gradient: 'from-pink-500 to-rose-600'
 },
     {
-      icon: <BarChart className="text-yellow-600" size={48} />,
-      title: 'Analytics & SEO',
-      description: 'Data-driven insights and search engine optimization to maximize your online presence.',
-      features: ['SEO Optimization', 'Google Analytics', 'Performance Tracking', 'Conversion Optimization'],
+      icon: <Pyramid className="text-yellow-600" size={48} />,
+      title: 'Python Django Web Development',
+  description: 'Robust and scalable Python solutions tailored for web development, automation, and data processing.',
+  features: ['Web Development (Django/Flask)', 'Data Analysis & Automation', 'API Development', 'Scripting & Bots'],
       gradient: 'from-yellow-500 to-orange-600'
     },
-    {
-  icon: <ServerCog className="text-red-600" size={48} />,
-  title: 'Django Development',
-  description: 'Powerful backend development using Django to build secure, scalable, and high-performance web applications.',
-  features: ['RESTful APIs', 'Admin Dashboards', 'Authentication Systems', 'Scalable Architecture'],
-  gradient: 'from-red-500 to-pink-600'
-}
-,
-   {
+      {
   icon: <Paintbrush className="text-indigo-600" size={48} />,
   title: 'Graphic Designing',
   description: 'Creative and professional graphic design solutions that elevate your brand identity and visual appeal.',
   features: ['Logo Design', 'Brand Identity', 'Social Media Graphics', 'UI/UX Mockups'],
   gradient: 'from-indigo-500 to-purple-600'
+},
+    {
+  icon: <ServerCog className="text-red-600" size={48} />,
+  title: 'Python Development',
+  description: 'End-to-end Python solutions for automation, data-driven insights, and custom applications — from powerful backend systems to intelligent process automation.',
+  features: ['Web Scraping', 'Data Cleaning and Visualization', 'Desktop app Development with GUI', 'Custom Python Solutions'],
+  gradient: 'from-red-500 to-pink-600'
 }
+,
+ 
   ];
 
   const containerVariants = {
@@ -94,13 +101,13 @@ const Services = () => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent mb-6"
+            className="text-4xl md:text-5xl font-bold pb-2  bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 bg-clip-text text-transparent mb-6"
           >
             Our Services
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
+            className="md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed"
           >
             We offer comprehensive digital solutions tailored to meet your unique business needs 
             and drive sustainable growth.
@@ -116,10 +123,9 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div 
               key={index} 
-              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-2xl transition-all duration-500 group relative overflow-hidden border border-gray-100"
+              className="bg-white p-8 rounded-xl  cursor-default shadow-sm hover:shadow-2xl transition-all duration-500 group relative overflow-hidden border border-gray-100"
               variants={itemVariants}
               whileHover={{ 
-                y: -15,
                 scale: 1.02,
                 rotateY: 5,
                 boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15)"
@@ -169,7 +175,7 @@ const Services = () => {
                 {service.features.map((feature, idx) => (
                   <motion.li 
                     key={idx} 
-                    className="flex items-center text-slate-700"
+                    className="flex items-center text-gray-700"
                     variants={{
                       hidden: { opacity: 0, x: -20 },
                       visible: { opacity: 1, x: 0 }

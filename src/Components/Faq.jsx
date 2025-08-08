@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
@@ -30,7 +30,7 @@ const Faq = () => {
 
   return (
     <section className="max-w-4xl mx-auto px-4 py-12" id="faq">
-      <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text mb-10">
+      <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-transparent bg-clip-text mb-10">
         Frequently Asked Questions
       </h2>
 
@@ -44,7 +44,7 @@ const Faq = () => {
               onClick={() => toggleFAQ(index)}
               className="flex justify-between items-center w-full p-5 text-left hover:bg-gray-50 transition"
             >
-              <span className="font-medium text-gray-800">{faq.question}</span>
+              <span className="font-medium text-gray-700">{faq.question}</span>
               <ChevronDown
                 className={`w-5 h-5 transition-transform ${
                   openIndex === index ? 'rotate-180' : ''
@@ -61,7 +61,7 @@ const Faq = () => {
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="px-5 pb-4 text-gray-600 text-sm">
+                  <div className="px-5 pb-4 pt-2 text-gray-700 text-sm">
                     {faq.answer}
                   </div>
                 </motion.div>
