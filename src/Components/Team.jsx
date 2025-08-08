@@ -2,29 +2,23 @@
 const team = [
   {
       name: '  Shayan Mirza',
-      title: '  — Co-Founder , CincoByte',
+      title: ' Co-Founder and ML Engineer',
       img: '/Shayan.jpg',
-      description: `  CincoByte — Delivering value in every byte.
-
-      At CincoByte, we combine innovation, clean design, and engineering excellence to serve startups, businesses, and communities alike.
-      Whether it's a product demo or a production-scale solution — with CincoByte, every byte counts.`
-    
-    },
+      description: "As the Co-Founder of CincoByte, Shayan Mirza combines a passion for innovation with deep expertise in Machine Learning and data-driven solutions. With a strong background in machine learning, he develops intelligent systems that turn complex problems into practical, impactful applications. His vision is to harness AI to create products that deliver real value and shape the future of technology."    },
     
     {
       name: 'Zia Ur Rehmman',
       title: ' Co-Founder & Web Developer with Django',
       img: '/Zia.jpg',
-      description: 'Full-stack architect passionate about scalable solutions with Django.',
+      description: 'As Co-Founder of CincoByte, Zia ur Rehman leads the development of powerful, scalable, and secure web applications using Python and Django. From building custom dashboards to deploying robust e-commerce platforms, Zia ensures every project is delivered with precision, speed and reliability. His commitment to clean code, maintainable design and modern development practices drives the technical excellence of our team.',
     
     },
-   {
+ {
   name: 'Kashif Ur Rehman',
   title: 'CTO & Full Stack Developer',
   img: '/Kashif.jpg',
-  description: 'Full Stack Developer proficient in crafting scalable, high-performance web applications from front-end to back-end, with expertise in React, Node.js, databases, and cloud deployment.',
-}
-,
+  description: 'As the CTO of CincoByte, Kashif Ur Rehman drives the vision and execution of cutting-edge digital solutions. With deep proficiency in both front-end and back-end development, he specializes in building scalable, high-performance web applications using React, Node.js, and modern databases.'
+},
     {
       name: 'Sheryar Yousaf',
       title: 'Flutter Developer',
