@@ -1,7 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 import Navbar from './Components/Navbar'
 import HeroSection from './Components/HeroSection'
 import About from './Components/About'
@@ -11,13 +7,14 @@ import Team from './Components/Team'
 import Faq from './Components/Faq'
 import Contactus from './Components/Contactus'
 import Footer from './Components/Footer'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
  
 
   return (
     <>
-      
+       <Toaster position='bottom-right' />
         <Navbar/>
         <HeroSection/>
         <About/>

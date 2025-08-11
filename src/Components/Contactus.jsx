@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
-import { Send } from 'lucide-react';
+import { Loader, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
+import toast from 'react-hot-toast';
 
 const Contactus = () => {
+  const [isLoading,setisLoading]=useState(false)
   const [errors, setErrors] = useState({
     name: '',
     email: '',
@@ -58,26 +60,29 @@ const Contactus = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!validate()) return;
 
     const templateParams = {
       name: formData.name,
       email: formData.email,
-      company: formData.company,
+      company: formData.company || "N/A",
       message: formData.message,
+      time:new Date().toLocaleString()
     };
-
+    const toastId = toast.loading("Submitting your request...");
+        setisLoading(true)
     emailjs
       .send('service_h5k663a', 'template_1relfh5', templateParams, 'PgPgnjyw2-vqkM6QO')
       .then(
         () => {
-          alert('Thank you! Your message has been sent.');
+          toast.success('Thank you for reaching out! We will get back to you shortly.',{id:toastId});
           setFormData({ name: '', email: '', company: '', message: '' });
+          setisLoading(false)
         },
         (error) => {
           console.error('EmailJS error:', error);
-          alert('Oops! Something went wrong. Please try again later.');
+          setisLoading(false)
+          toast.error('Oops! Something went wrong. Please try again later.',{id:toastId});
         }
       );
   };
@@ -174,10 +179,15 @@ const Contactus = () => {
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
+              disabled={isLoading}
               type="submit"
               className="w-full cursor-pointer bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 px-6 rounded-xl font-semibold transition duration-200 flex items-center justify-center gap-2 shadow-md"
             >
-              Send Message <Send size={18} />
+             {
+              isLoading?<Loader className='animate-spin' />:<>
+               Send Message <Send size={18} />
+              </>
+             }
             </motion.button>
           </form>
         </div>

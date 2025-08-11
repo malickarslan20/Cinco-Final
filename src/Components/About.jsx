@@ -14,8 +14,8 @@ const About = () => {
   }, [isInView, controls]);
 
   const stats = [
-    { number: '5+', label: 'Projects Completed' },
-    { number: '30+', label: 'Happy Clients' },
+    { number: '10+', label: 'Projects Completed' },
+    { number: '5+', label: 'Happy Clients' },
     { number: '2+', label: 'Years Experience' },
     { number: '24/7', label: 'Support' },
   ];
