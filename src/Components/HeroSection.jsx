@@ -34,9 +34,9 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen bg-gray-200  flex flex-col flex-col-reverse lg:flex-row items-center justify-between  px-6 pb-8 lg:px-10 xl:px-30 w-screen lg:gap-10  relative overflow-hidden"
+    <section id="home" className="min-h-screen   bg-gray-200  flex flex-col flex-col-reverse lg:flex-row lg:items-center gap-7 lg:justify-between  px-6 pb-8 lg:px-10 xl:px-30 w-screen lg:gap-10  relative overflow-hidden"
 >
-     <div className=''>
+     <div>
        <motion.div
         className="container mx-auto   relative z-10"
         variants={containerVariants}
@@ -45,7 +45,7 @@ const Hero = () => {
       >
         <motion.div
           variants={itemVariants}
-          className=" mb-2 -mt-14"
+          className=" mb-2"
         >
 
 <motion.h1
@@ -74,7 +74,7 @@ const Hero = () => {
 
         <motion.p
           variants={itemVariants}
-          className="md:text-xl text-gray-700 pl-2 mb-8 max-w-3xl max-w-[50ch] mx-auto leading-relaxed"
+          className="md:text-xl text-gray-700 pl-2 mb-8 max-w-3xl max-w-[50ch]  leading-relaxed"
         >
           Transform your business with cutting-edge solutions that drive growth,
           innovation, and lasting success in the digital landscape.
@@ -135,6 +135,7 @@ const Hero = () => {
 
       <motion.img
   src="/logo1.png"
+  className='  '
   initial={{ x: 100, opacity: 0 }}
   animate={{ x: 0, opacity: 1 }}  
   transition={{ duration: 0.8, ease: "easeOut" }}

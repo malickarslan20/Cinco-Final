@@ -20,7 +20,7 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex gap-6 mt-4">
           <a
-            href="mailto:kashisial2327@gmail.com"
+            href="mailto:cincobyteofficial@gmail.com"
             aria-label="Email"
              target="_blank"
             className="hover:scale-110 transition duration-300"
